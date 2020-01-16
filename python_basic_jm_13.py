@@ -1,94 +1,82 @@
 '''
-조건문, 반복문
-코딩 테스트 문제
+함수 및 람다
+
+함수 정의 방법
+def 함수이름(파라미터):
+    함수 내용
 '''
 
-# 1. 아래 딕셔너리에서 '가을'에 해당하는 과일을 출력하세요.
-q1 = fruit = {"봄": "딸기", "여름": "토마토", "가을": "사과"}
-print(fruit["가을"])
-for key in fruit.keys():
-    if key =="가을":
-        print(fruit[key])
-        break
+# 예제1
+def test_function():
+    print(">>>테스트 함수가 실행 되었습니다.")
 
-# 2. 아래 딕셔너리에서 '사과'가 포함되었는지 확인하세요.
-q2 = fruit = {"봄": "딸기", "여름": "토마토", "가을": "사과"}
-for val in fruit.values():
-    if val == "사과":
-        print("사과가 있습니다.")
-        break
-
-# 3. 다음 점수 구간에 맞게 학점을 출력하세요.
-# 81 ~ 100 : A학점
-# 61 ~ 80 :  B학점
-# 41 ~ 60 :  C학점
-# 21 ~ 40 :  D학점
-#  0 ~ 20 :  E학점
-score = 40
-grade = ""
-
-if score >= 81 :
-    grade = "A"
-elif score <= 80 and score >= 61:
-    grade = "B"
-elif score <= 60 and score >= 41:
-    grade = "C"
-elif score <= 40 and score >= 21:
-    grade = "D"
-else :
-    grade = "E"
-
-print(grade)
+# 함수 실행 방법
+test_function()
 
 
-# 4. 다음 세 개의 숫자 중 가장 큰수를 출력하세요.(if문 사용) : 12, 6, 18
-print(max([12,6,18]))
+# 예제 2
+def test_2_function(text):
+    print(text)
+
+# 매개변수 입력한 함수 실행하기
+test_2_function('>>>이것이 매개 변수입니다.')
+
+# 예제 3
+def test_3_function(value):
+    string_val = ">>>입력된 단어는 \'{}\' 입니다.".format(value)
+    return string_val
+
+test = test_3_function("딸기")
+print(test)
+
+# 예제 4
+# *args 튜플로 출력 됨
+def args_function(*args):
+    # 가변 매개변수
+    print(args)
+
+args_function('a','b','c')
+args_function(1,2,3)
+args_function(1,'a',[1,2,3])
+args_function(1,2,3,4,5,6,7)
 
 
-# 5. 다음 주민등록 번호에서 7자리 숫자를 사용해서 남자, 여자를 판별하세요. (1,3 : 남자, 2,4 : 여자)
-s = '891022-2473837'
-gender_data = s.split("-")[1]
-gender = int(gender_data[0])
-if gender in [1, 3]:
-    print("남자입니다.")
-elif gender in [2,4]:
-    print("여자입니다.")
+# **kwargs  딕셔너리로 출력 됨
+def kwargs_function(**kwargs):
+    print(kwargs)
+    for key, value in kwargs.items():
+        print(key, value)
 
-# 6 ~ 10 반복문 사용(while 또는 for)
-# 6. 다음 리스트 중에서 '정' 글자를 제외하고 출력하세요.
-q3 = ["갑", "을", "병", "정"]
-for i in q3:
-    if i == "정":
-        continue
-    else:
-        print(i)
+kwargs_function(name="kimjaemin",
+                age=26,
+                height=177)
 
-# 7. 1부터 100까지 자연수 중 '홀수'만 한 라인으로 출력 하세요.
-for i in range(1,100,2):
-    print(i,end=(","))
+print()
 
-# 8. 아래 리스트 항목 중에서 5글자 이상의 단어만 출력하세요.
-q4 = ["nice", "study", "python", "anaconda", "!"]
-for text in q4:
-    if len(text) >= 5:
-        print(text)
+# 혼합
+def complex_function(arg1, arg2, *args, **kwargs):
+    print(arg1, arg2, args, kwargs)
 
-# 9. 아래 리스트 항목 중에서 소문자만 출력하세요.
-q5 = ["A", "b", "c", "D", "e", "F", "G", "h"]
-for alp in q5:
-    if alp == alp.lower():
-        print(alp, end=(","))
+complex_function(1,2)
+complex_function(1,2, 'park', 'kim')
+complex_function(1,2, 'park', 'kim', name='kim')
+print()
 
-# 10. 아래 리스트 항목 중에서 소문자는 대문자로 대문자는 소문자로 출력하세요.
-q6 = ["A", "b", "c", "D", "e", "F", "G", "h"]
-for q in q6:
-    if q == q.upper():
-        print(q.lower())
-    else:
-        print(q.upper())
+# 예제 5
+# 중첩함수(클로저)
+def nested_function(num):
+    def _in_function(num):
+        print(num+1000)
+    print('>>>',num)
+    _in_function(num)
+nested_function(123)
 
+# 예제 6
+# 힌트
+def hint_function(x : int) -> list:
+    return [x, x+1, x+2]
 
-
+print(hint_function(1))
 
 
 
