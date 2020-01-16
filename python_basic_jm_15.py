@@ -32,6 +32,34 @@ print(user_2.__dict__)
 print(id(user_1))
 print(id(user_2))
 print(id(user_1)==id(user_2))
+print('\n\n')
+
+# 예제 2
+# 클래스 변수
+class WareHouse:
+    stock_num = 0
+    def __init__(self, name):
+        self.name = name
+        WareHouse.stock_num += 1
+    def __del__(self):
+        WareHouse.stock_num -= 1
+
+user1 = WareHouse("Kim")
+user2 = WareHouse("Lee")
+user3 = WareHouse("Park")
+
+
+print(WareHouse.__dict__["stock_num"])  # 클래스 변수
+print(user1.stock_num)
+del user1
+print(user2.stock_num)
+
+
+'''
+여기서 부터 듣기
+https://online.fastcampus.co.kr/courses/510383/lectures/9729961
+'''
+
 
 
 
