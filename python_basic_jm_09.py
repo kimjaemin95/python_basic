@@ -38,12 +38,6 @@ s3.remove(1)
 print(s3)
 
 
-'''
-2020년 01월 15일 수요일
-https://online.fastcampus.co.kr/courses/510383/lectures/9729949
-할 차례
-'''
-
 
 
 
