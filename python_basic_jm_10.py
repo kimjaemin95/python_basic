@@ -58,6 +58,7 @@ print(list_2)
 
 # 12. 다음 튜플을 리스트로 변환하세요. : (1,2,3,4)
 tup = (1, 2, 3, 4)
+print(list(tup))
 tup_list = list()
 for i in tup:
     print(i)
