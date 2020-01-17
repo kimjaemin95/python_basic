@@ -55,10 +55,6 @@ del user1
 print(user2.stock_num)
 
 
-'''
-여기서 부터 듣기
-https://online.fastcampus.co.kr/courses/510383/lectures/9729961
-'''
 
 
 
