@@ -46,9 +46,71 @@ import time
 print(time.testtime_month())
 '''
 
+# ValueError : 참조 값이 없을 때 발생
+'''
+x = [ 1, 5, 7]
+x.remove(10)
+x.index(10) 
+'''
+
+# FileNotFoundError
+'''
+f = open('text.txt', 'r')  설정한 경로가 잘못 되었을 때
+'''
+
+# TypeError
+'''
+x = [1,2]
+y = (1,2)
+z = 'test'
+print(x + y)
+print(z + x)
+'''
+
+# 항상 예외가 발생하지 않을 것으로 가정하고 먼저 코딩을 합니다.
+# 그 후 런타임 예외 발생 시 예외 처리 코딩을 권장합니다.(EAFP 코딩 스타일일
+
+# 예외 처리 기본
+# try : 에러가 발생할 가능성이 있는 코드 실행
+# except : 에러명 1
+# except : 에러명 2
+# else : 에러가 발생하지 않았을 경우 실행
+# finally : 항상 실행
+
+# 예제1
+
+name = ['kim', 'lee', 'park']
+
+try :
+    z = 'kim' # 'cho' 예외 발생
+    x = name.index(z)
+    print('{} Found it in name {}'.format(z, x+1))
+except ValueError:
+    print('Not found it! - Occurred ValueError')
+else :
+    print('ok else!')
+finally:
+    print('finally!!!')
 
 
+# 예제2
 
+name = ['kim', 'lee', 'park']
+
+try :
+    z = 'jina'
+    x = name.index(z)
+    print('{} Found it in name {}'.format(z, x+1))
+except:
+    print('Not found it! - Occurred Error')
+else :
+    print('ok else!')
+finally:
+    print('finally!!!')
+
+'''
+https://online.fastcampus.co.kr/courses/510383/lectures/9729968
+'''
 
 
 
