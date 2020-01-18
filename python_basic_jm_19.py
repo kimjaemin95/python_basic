@@ -101,20 +101,19 @@ try :
     z = 'jina'
     x = name.index(z)
     print('{} Found it in name {}'.format(z, x+1))
-except:
+except Exception as e:
+    print(e)
     print('Not found it! - Occurred Error')
 else :
     print('ok else!')
 finally:
     print('finally!!!')
 
+
+
 '''
-https://online.fastcampus.co.kr/courses/510383/lectures/9729968
+https://online.fastcampus.co.kr/courses/510383/lectures/9729971
 '''
-
-
-
-
 
 
 
