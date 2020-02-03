@@ -89,8 +89,7 @@ except ValueError:
     print('Not found it! - Occurred ValueError')
 else :
     print('ok else!')
-finally:
-    print('finally!!!')
+
 
 
 # 예제2
@@ -107,13 +106,56 @@ except Exception as e:
 else :
     print('ok else!')
 finally:
+    '''
+    외부 접속을 했을 경우 무조건적으로 close를 해야하므로 finally 사용하는 경우가 있다
+    '''
     print('finally!!!')
+    print()
+
+# 예제3
+# 예외 처리는 하지 않지만, 무조건 수행 되는 코딩 패턴
+
+try :
+    print("try")
+finally :
+    print("Ok finally!!!!!")
 
 
+# 예제4
+try :
+    z = 'kim' # 'cho' 예외 발생
+    x = name.index(z)
+    print('{} Found it in name {}'.format(z, x+1))
+except ValueError:
+    print('Not found it! - Occurred ValueError')
+except IndexError:
+    print('Not found it! - Occurred IndexError')
+except Exception:
+    print('Not found it! - Occurred Exception')
+else :
+    print('ok else!')
+finally:
+    print('finally ok!!')
 
-'''
-https://online.fastcampus.co.kr/courses/510383/lectures/9729971
-'''
+
+# 예제5
+# 예외 발생 : raise
+# raise 키워드로 예외 직접 발생
+
+try :
+    a = 'Kim'
+    if a == 'Kim':
+        print('Ok 허가!')
+    else:
+        raise ValueError
+except ValueError:
+    print('ValueError 발생')
+except Exception as e:
+    print(e)
+else:
+    print('OK!@!!')
+
+
 
 
 
