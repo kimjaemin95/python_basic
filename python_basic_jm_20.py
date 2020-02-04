@@ -67,6 +67,7 @@ with open('./resource/sample5.csv', 'w', newline='') as f:
     wt = csv.writer(f)
     wt.writerows(w)
 
+print()
 
 # XSL, XLSX
 # excel을 처리하는 라이브러리 : openpyxl, xlsxwriter, xlrd, xlwt, xlutils
@@ -75,12 +76,25 @@ with open('./resource/sample5.csv', 'w', newline='') as f:
 # pip install openpyxl
 # pip install pandas
 
-'''
-https://online.fastcampus.co.kr/courses/510383/lectures/9729970
-'''
+import pandas as pd
+
+
+# sheetname='시트명' 또는 숫자 --> 왼쪽부터 1,2,3... , header = 숫자(몇 번째부터 header로 지정할 것인가), skiprow=숫자
+xlsx = pd.read_excel('./resource/sample.xlsx')
+# xlsx데이터 확인
+print(xlsx.head())  # 상위 5행 읽기
+print()
+print(xlsx.tail())  # 맨하단 5행 읽기
+print()
+print(xlsx.shape)   # 행열 표시
+print()
 
 
 
+# 엑셀 or CSV 다시 쓰기
+xlsx.to_excel('./resource/result_index_true.xlsx', index=True)
+xlsx.to_excel('./resource/result_index_false.xlsx', index=False)
+xlsx.to_csv('./resource/result.csv', index=False)
 
 
 
