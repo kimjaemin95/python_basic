@@ -49,7 +49,7 @@ cursor.executemany("INSERT INTO users(id, username, e_mail, phone, website, regd
 
 # 테이블 데이터 삭제
 # conn.execute("DELETE FROM users")
-print("users db deleted : ", conn.execute("DELETE FROM users").rowcount)
+# print("users db deleted : ", conn.execute("DELETE FROM users").rowcount)
 
 
 # 커밋(Commit) : isolation_level = None 일경우 auto commit
