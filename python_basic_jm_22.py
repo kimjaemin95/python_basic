@@ -46,16 +46,52 @@ for row in cursor.execute("SELECT * FROM users ORDER BY id desc"):
 
 print()
 
+
 # WHERE Retrieve1
 param1 = (3,)
 cursor.execute("SELECT * FROM users WHERE id=?", param1)
 print('param1 : ', cursor.fetchall())
 
+print()
 
+# WHERE Retrieve2
+param2 = 4
+cursor.execute("SELECT * FROM users WHERE id='%s'" % param2)
+print('param2 : ', cursor.fetchall())
 
+print()
 
+# WHERE Retrieve3
+cursor.execute("SELECT * FROM users WHERE id=:Id", {"Id":5})
+print('param3 : ', cursor.fetchall())
 
+print()
 
+# WHERE Retrieve4
+param4 = (3,5)
+cursor.execute("SELECT * FROM users WHERE id IN(?,?)", param4)  # IN은 합집합입니다.
+print('param4 : ', cursor.fetchall())
+
+print()
+
+# WHERE Retrieve5
+cursor.execute("SELECT * FROM users WHERE id IN('%d','%d')" % (3,4))  # IN은 합집합입니다.
+print('param5 : ', cursor.fetchall())
+
+print()
+
+# WHERE Retrieve6
+cursor.execute("SELECT * FROM users WHERE id=:id1 OR id=:id2", {"id1":1, "id2":2})  # IN은 합집합입니다.
+print('param6 : ', cursor.fetchall())
+
+print()
+
+# Dump 출력
+with conn:
+    with open('D:/Python/python_basic/resource/dump.sql', 'w') as f :
+        for line in conn.iterdump():
+            f.write('%s\n' % line)
+        print('Dump print complete')
 
 
 
