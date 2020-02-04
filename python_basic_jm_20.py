@@ -75,11 +75,6 @@ with open('./resource/sample5.csv', 'w', newline='') as f:
 # pip install openpyxl
 # pip install pandas
 
-
-import setuptools
-print(dir(setuptools))
-
-
 '''
 https://online.fastcampus.co.kr/courses/510383/lectures/9729970
 '''
