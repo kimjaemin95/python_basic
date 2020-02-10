@@ -45,6 +45,3 @@ print("users data delete : ", conn.execute("DELETE FROM users").rowcount, "rows"
 conn.close()
 
 
-'''
-https://online.fastcampus.co.kr/courses/510383/lectures/10074685
-'''
